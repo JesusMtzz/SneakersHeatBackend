@@ -1,0 +1,13 @@
+# specify the node base image with your desired version node:<version>
+FROM node:18
+
+RUN npm i -g nodemon pupeteer jsdom
+RUN mkdir - p /home/application
+
+
+WORKDIR /home/app
+
+# replace this with your application's default port
+EXPOSE 3000
+
+CMD ["nodemon", "index.js"]
